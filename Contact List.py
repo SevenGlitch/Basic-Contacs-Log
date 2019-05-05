@@ -1,5 +1,5 @@
 #  ®All rights reserved.
-#   This material can only be modified for educational reasons and it can only be used if credit is given to the creator.
+#   This material can only be modified for educational reasons and can only be used if credit is given to the creator.
 
 #-------Startup Variables-------
 import time
