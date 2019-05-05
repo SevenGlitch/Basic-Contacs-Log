@@ -1,4 +1,5 @@
-#  ®All right reserved.This material can only be modified for educational reason and it can only be used if credit is given to the creator.
+#  ®All right reserved.
+#   This material can only be modified for educational reason and it can only be used if credit is given to the creator.
 
 
 #-------Startup Variables-------
