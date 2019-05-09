@@ -1,5 +1,5 @@
 #  ®All rights reserved.
-#   This material can only be modified for educational reasons and can only be used if credit is given to the creator.
+#  This material can only be modified for educational reasons and can only be used if credit is given to the creator.
 
 #-------Startup Variables-------
 import time
@@ -26,54 +26,63 @@ time.sleep(3)
 print "If you exit all of your data will be lost."
 time.sleep(5)
 
-while user_input != "exit":
+while user_input != "yes":
+    while user_input != "exit":
 
-    print
+        print
 
-    os.system('cls')
+        os.system('cls')
 
-    print
+        print
 
-    user_input = raw_input("Would you like to (make) or (read) a contact: ")
+        print "List of options:"
+        print "1.To make a contact type (make)"
+        print "2.To read a contact type (read)"
+        print "3.To remove a contact type (delete)"
+        print "4.To exit please type (exit)"
 
-    if user_input == "make":
-        user_input = raw_input("Give the contacts full name: ")
-        name.append(user_input)
+        print
+
+        user_input = raw_input("Would you like to (make) or (read) a contact: ")
+
+        if user_input == "make":
+            user_input = raw_input("Give the contacts full name: ")
+            name.append(user_input)
     
-        user_input = raw_input("Give the contacts number: ")
-        number.append(user_input)
+            user_input = raw_input("Give the contacts number: ")
+            number.append(user_input)
 
-        user_input = raw_input("Would you like to add an address on the contact? (yes/no): ")
+            user_input = raw_input("Would you like to add an address on the contact? (yes/no): ")
 
-        if user_input == "yes":
-            user_input = raw_input("Give the contacts address: ")
-            address.append(user_input)
+            if user_input == "yes":
+                user_input = raw_input("Give the contacts address: ")
+                address.append(user_input)
 
-        elif user_input == "no":
-            print "No address will be placed on this contact"
-            address.append("None")
+            elif user_input == "no":
+                print "No address will be placed on this contact"
+                address.append("None")
 
-        user_input = raw_input("Would you like to add an email on the contact? (yes/no): ")
+            user_input = raw_input("Would you like to add an email on the contact? (yes/no): ")
 
-        if user_input == "yes":
-            user_input = raw_input("Give the contacts email: ")
-            email.append(user_input)
+            if user_input == "yes":
+                user_input = raw_input("Give the contacts email: ")
+                email.append(user_input)
 
-        elif user_input == "no":
-            print "No email address will be placed on this contact"
-            email.append("None")
+            elif user_input == "no":
+                print "No email address will be placed on this contact"
+                email.append("None")
         
-        time.sleep(2)
+            time.sleep(2)
 
-    elif user_input == "read":
-        if name != []:
-            print
-
-            for elem in name:
-                print x,".",elem
-                x=x+1
-
+        elif user_input == "read":
+            if name != []:
                 print
+
+                for elem in name:
+                    print x,".",elem
+                    x=x+1
+
+                    print
 
                 user_input = input("Give the corresponding number of the contact you would like to see: ")
                 i = user_input
@@ -91,18 +100,50 @@ while user_input != "exit":
                 
                 user_input = raw_input("When ready please press enter to continue")
 
-        else:
-            print
-            print "There are no contacts. You could create one and it will appear here."
-            time.sleep(3)
+            else:
+                print
+                print "There are no contacts. You could create one and it will appear here."
+                time.sleep(3)
 
-os.system('cls')
+        elif user_input == "delete":
+            if name != []:
+                print
 
-print
+                for elem in name:
+                    print x,".",elem
+                    x=x+1
 
-print "You are about to exit!"
-time.sleep(1)
-print "Good bye!"
-time.sleep(3)
-exit()
+                print
+
+                user_input = input("Give the corresponding number of the contact you would like to remove: ")
+                i = user_input
+
+                name.remove(i)
+                number.remove(i)
+                address.remove(i)
+                email.remove(i)
+            
+                print "The contact has been removed!"
+
+            else:
+                print
+                print "There are no contacts. You could create one and it will appear here."
+                time.sleep(3)
+
+
+    os.system('cls')
+
+    print
+
+    print "You are about to exit!"
+    time.sleep(1)
+    user_input = raw_input ("Are you sure you want to exit?(yes/no): ")
+    if user_input == "yes":
+        print "Good bye!"
+        time.sleep(3)
+        exit()
+
+    elif user_input == "no":
+        print " "
+
 #-----------------------
